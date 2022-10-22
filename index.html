@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+  </style>
+  <title>Quiz App</title>
+</head>
+<body class="bg-slate-200">
+
+    <div class="flex h-screen justify-center items-center">
+        <div class="text-center">
+            <h2 class="text-cyan-400 m-2 text-4xl font-bold">Quick Quiz</h2>
+            <div> 
+                <button class="rounded-md m-2  text-cyan-600 px-7 py-1 border-solid border-2 border-blue-400 hover:border-none hover:bg-blue-400 hover:text-white" >
+                    <a href="./pages/game.html">Play Quiz</a>
+                </button>
+            </div>
+            <div> 
+                <button class="rounded-md m-2 text-cyan-600 px-7 py-1 border-solid border-2 border-blue-400 hover:border-none hover:bg-blue-400 hover:text-white">
+                    <a href="./pages/score.html">High Score</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

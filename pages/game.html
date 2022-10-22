@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="../assets/main.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-200">
+
+    <div class="flex h-screen justify-center items-center">
+        <div id="game" class="max-w-xl">
+            <!-- number of qsns & score -->
+            <div class="flex justify-between text-center text-2xl">
+                <div class="">
+                    <div class="text-gray-500" id="qsncount"></div>
+                    <div class="w-40 h-8 border-solid border-2 mt-2 border-cyan-400">
+                        <div class="bg-cyan-400 h-7 " id="progressbar"> </div>
+                    </div>
+                    <div class=" bg-cyan-400"></div>
+                </div>
+                <div>
+                    <div class="text-gray-500">Score</div>
+                    <div class="text-cyan-400 text-4xl font-semibold" id="score">0</div>
+                </div>
+            </div>
+            <!-- question -->
+            <h2 id="question" class="py-3 text-2xl font-semibold">Question is placed in there position soooooooo  needddd?</h2>
+            <!-- options -->
+            <div class="flex my-2 hover:drop-shadow-xl">
+                <p class="p-5 bg-cyan-400 ">A</p>
+                <p class="p-5 w-full bg-white choice-text" data-number="1">Choice 1</p>
+            </div>
+
+            <div class="flex my-2 hover:drop-shadow-xl">
+                <p class="p-5 bg-cyan-400">B</p>
+                <p class="p-5 w-full bg-white choice-text" data-number="2">Choice 2</p>
+            </div>
+
+            <div class="flex my-2 hover:drop-shadow-xl">
+                <p class="p-5 bg-cyan-400">C</p>
+                <p class="p-5 w-full bg-white choice-text" data-number="3">Choice 3</p>
+            </div>
+
+            <div class="flex my-2 hover:drop-shadow-xl">
+                <p class="p-5 bg-cyan-400">D</p>
+                <p class="p-5 w-full bg-white choice-text" data-number="4">Choice 4</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- js -->
+    <script src="../assets/main.js"></script>
+</body>
+</html>

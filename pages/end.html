@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>End quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body class="bg-slate-200">
+
+    <div class="flex h-screen justify-center items-center">
+        <div class="text-center">
+            <h2 class="text-cyan-400 m-2 text-4xl font-bold mb-8" id="score">0</h2>
+            <form action="" class="flex flex-col">
+                <input type="text" id="username" class="rounded-md m-2 px-7  py-1" placeholder="Username">
+                <button type="submit" id="submitbtn" disabled class="disapled rounded-md m-2  text-cyan-600 w-30 px-24 py-1 border-solid border-2 border-blue-400 hover:border-none hover:bg-blue-400 hover:text-white" >Save</button>
+            </form>
+            <div> 
+                <button class="rounded-md m-2  text-cyan-600 px-20 w-30 py-1 border-solid border-2 border-blue-400 hover:border-none hover:bg-blue-400 hover:text-white" >
+                    <a href="../pages/game.html">Play Again</a>
+                </button>
+            </div>
+            <div> 
+                <button class="rounded-md m-2 text-cyan-600 px-20 py-1 w-30 border-solid border-2 border-blue-400 hover:border-none hover:bg-blue-400 hover:text-white">
+                    <a href="/index.html">Go Home</a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+<!-- js   -->
+<script src="../assets/end.js"></script>
+</body>
+</html>
