@@ -1,0 +1,26 @@
+[
+    {
+        "question": "what is HTML ?",
+        "choice1": "object oriented language",
+        "choice2": "Scripting language",
+        "choice3": "programming language",
+        "choice4": "Advanced frontend Framework",
+        "answer":2
+    },
+    {
+        "question": "what is DOM ?",
+        "choice1": "document object markup",
+        "choice2": "document oriented model",
+        "choice3": "duplicate object model",
+        "choice4": "document object model",
+        "answer": 4
+    },
+    {
+        "question": "what is react?",
+        "choice1": "object oriented language",
+        "choice2": "Scripting language",
+        "choice3": "programming language",
+        "choice4": "Advanced frontend Framework",
+        "answer": 4
+    }
+]

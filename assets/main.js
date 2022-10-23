@@ -3,48 +3,67 @@ const choices = [...document.getElementsByClassName("choice-text")];
 let qsnCountEl = document.getElementById("qsncount");
 let scoreEl = document.getElementById("score");
 let progreesbarEl = document.getElementById("progressbar")
+let loaderEl = document.getElementById("loader")
+let bodyEl = document.getElementById("game")
 
 let currentqsn = {};
 let acceptinganswer = false;
 let score = 0;
 let qsncounter = 0;
 let availableqsn = [];
-let questions = [
-    {
-        question: "what is HTML ?",
-        choice1: "object oriented language",
-        choice2: "Scripting language",
-        choice3: "programming language",
-        choice4: "Advanced frontend Framework",
-        answer:2
-    },
-    {
-        question: "what is DOM ?",
-        choice1: "document object markup",
-        choice2: "document oriented model",
-        choice3: "duplicate object model",
-        choice4: "document object model",
-        answer: 4
-    },
-    {
-        question: "what is react?",
-        choice1: "object oriented language",
-        choice2: "Scripting language",
-        choice3: "programming language",
-        choice4: "Advanced frontend Framework",
-        answer: 4
-    }
-]
+let questions = [];
 
+// fetch("questions.json")
+//     .then(result => {
+//         // console.log(result);
+//         return result.json();
+//     })
+//     .then(loadedquestions => {
+//         // console.log(loadedquestions);
+//         questions = loadedquestions;
+//         startquiz();
+//     })
+//     .catch(err => {
+//         console.error(err);
+//     });
+
+fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple")
+    .then(result => {
+        // console.log(result);
+        return result.json();
+    })
+    .then(loadedquestions => {
+        // console.log(loadedquestions.results);
+        questions = loadedquestions.results.map(loadedquestion => {
+            const frmqsn = {
+                question: loadedquestion.question
+            };
+
+            const anschoices = [...loadedquestion.incorrect_answers];
+            frmqsn.answer = Math.floor(Math.random() * 4) + 1;
+            // console.log(frmqsn.answer);
+            anschoices.splice(frmqsn.answer - 1, 0, loadedquestion.correct_answer);
+            anschoices.forEach((choice ,index) => {
+                frmqsn["choice" + (index + 1)] = choice;
+            });
+            return frmqsn;
+        });
+        startquiz();
+    })
+    .catch(err => {
+        console.error(err);
+    });
 // 
 let bonus = 0;
-const max_qsns = 3;
+let max_qsns = 10;
 
 startquiz = () => {
     qsncounter = 0;
     score = 0;
     availableqsn = [...questions]
     // console.log(availableqsn);
+    loaderEl.classList.add("hidden")
+    bodyEl.classList.remove("hidden")
     getNewQuestion();
 };
 
@@ -101,4 +120,3 @@ scoreinc = () => {
     bonus += 10;
     scoreEl.innerText = bonus;  
 }
-startquiz();
